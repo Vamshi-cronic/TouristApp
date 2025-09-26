@@ -1,0 +1,352 @@
+
+[
+  {
+    "place": { "lng": 77.216721, "lat": 28.613939 },
+    "date": "2022-08-15",
+    "time": "14:00:00",
+    "description": "Flash flood in Delhi due to heavy rainfall.",
+    "type": "natural_disaster"
+  },
+  {
+    "place": { "lng": 72.877655, "lat": 19.075983 },
+    "date": "2021-07-26",
+    "time": "18:30:00",
+    "description": "Building collapse in Mumbai.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 72.877655, "lat": 19.075983 },
+    "date": "2023-11-07",
+    "time": "10:30:10",
+    "description": "Building collapse in Mumbai.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 88.363892, "lat": 22.572645 },
+    "date": "2020-05-20",
+    "time": "15:00:00",
+    "description": "Cyclone Amphan landfall in Kolkata.",
+    "type": "natural_disaster"
+  },
+  {
+    "place": { "lng": 78.486671, "lat": 17.385044 },
+    "date": "2023-01-10",
+    "time": "12:00:00",
+    "description": "Major fire at a market in Hyderabad.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 78.486671, "lat": 17.385044 },
+    "date": "2023-04-20",
+    "time": "2:10:30",
+    "description": "Major fire at a market in Hyderabad.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 78.486671, "lat": 17.385044 },
+    "date": "2023-04-20",
+    "time": "2:10:30",
+    "description": "Major fire at a market in Hyderabad.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 78.486671, "lat": 17.385044 },
+    "date": "2023-04-20",
+    "time": "2:10:30",
+    "description": "Major fire at a market in Hyderabad.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 78.486671, "lat": 17.385044 },
+    "date": "2023-06-15",
+    "time": "15:48:51",
+    "description": "Major fire at a market in Hyderabad.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 77.594566, "lat": 12.971599 },
+    "date": "2019-11-01",
+    "time": "09:00:00",
+    "description": "Severe traffic congestion and crowd gathering in Bangalore.",
+    "type": "crowd"
+  },
+  {
+    "place": { "lng": 80.2707, "lat": 13.0827 },
+    "date": "2023-12-04",
+    "time": "11:00:00",
+    "description": "Severe flooding in Chennai due to Cyclone Michaung.",
+    "type": "natural_disaster"
+  },
+  {
+    "place": { "lng": 76.6413, "lat": 10.5276 },
+    "date": "2021-08-12",
+    "time": "03:00:00",
+    "description": "Major landslide in Idukki district, Kerala.",
+    "type": "natural_disaster"
+  },
+  {
+    "place": { "lng": 73.8567, "lat": 18.5204 },
+    "date": "2024-01-15",
+    "time": "18:00:00",
+    "description": "Gridlock traffic jam on Mumbai-Pune Expressway.",
+    "type": "crowd"
+  },
+  {
+    "place": { "lng": 77.216721, "lat": 28.613939 },
+    "date": "2023-11-08",
+    "time": "09:30:00",
+    "description": "Severe air pollution and smog emergency declared in Delhi.",
+    "type": "other"
+  },
+  {
+    "place": { "lng": 72.877655, "lat": 19.075983 },
+    "date": "2008-11-26",
+    "time": "20:00:00",
+    "description": "Coordinated terrorist attacks in Mumbai.",
+    "type": "terror"
+  },
+
+    {
+      "place": { "lng": 79.0580, "lat": 30.1123 },
+      "date": "2025-09-15",
+      "time": "11:00:00",
+      "description": "Cloudburst in Dehradun causing flash floods, landslides, bridge collapse on Dehradun-Haridwar highway.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 79.5200, "lat": 30.7294 },
+      "date": "2025-09-18",
+      "time": "14:00:00",
+      "description": "Cloudburst bats Uttarakhand, 6 buildings collapse in Chamoli district, many people missing.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 92.9376, "lat": 25.7460 },
+      "date": "2024-05-30",
+      "time": "18:00:00",
+      "description": "Cyclone Remal causes flash floods and landslides across Northeast India; many deaths in Assam, Mizoram.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 73.9960, "lat": 21.1820 },
+      "date": "2024-07-06",
+      "time": "14:30:00",
+      "description": "Residential building collapses in outskirts of Surat following heavy rains; 7 people killed.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 74.1240, "lat": 22.7070 },
+      "date": "2025-07-09",
+      "time": "07:30:00",
+      "description": "Gambhira Bridge collapse in Padra, Gujarat amid heavy rains; vehicles plunge into river, dozens dead.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 78.4617, "lat": 17.3850 },
+      "date": "2025-06-26",
+      "time": "12:00:00",
+      "description": "Sidewall of new hospital wing (Sishu Bhawan) in Bhubaneswar collapses after rain; no injuries reported.",
+      "type": "other"
+    }
+  ,
+    {
+      "place": { "lng": 77.216721, "lat": 28.613939 },
+      "date": "2022-08-15",
+      "time": "14:00:00",
+      "description": "Flash flood in Delhi due to heavy rainfall.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 72.877655, "lat": 19.075983 },
+      "date": "2021-07-26",
+      "time": "18:30:00",
+      "description": "Building collapse in Mumbai.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 88.363892, "lat": 22.572645 },
+      "date": "2020-05-20",
+      "time": "15:00:00",
+      "description": "Cyclone Amphan landfall in Kolkata.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 78.486671, "lat": 17.385044 },
+      "date": "2023-01-10",
+      "time": "12:00:00",
+      "description": "Major fire at a market in Hyderabad.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 77.594566, "lat": 12.971599 },
+      "date": "2019-11-01",
+      "time": "09:00:00",
+      "description": "Severe traffic congestion and crowd gathering in Bangalore.",
+      "type": "crowd"
+    },
+    {
+      "place": { "lng": 80.2707, "lat": 13.0827 },
+      "date": "2023-12-04",
+      "time": "11:00:00",
+      "description": "Severe flooding in Chennai due to Cyclone Michaung.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 76.6413, "lat": 10.5276 },
+      "date": "2021-08-12",
+      "time": "03:00:00",
+      "description": "Major landslide in Idukki district, Kerala.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 73.8567, "lat": 18.5204 },
+      "date": "2024-01-15",
+      "time": "18:00:00",
+      "description": "Gridlock traffic jam on Mumbai-Pune Expressway.",
+      "type": "crowd"
+    },
+    {
+      "place": { "lng": 77.216721, "lat": 28.613939 },
+      "date": "2023-11-08",
+      "time": "09:30:00",
+      "description": "Severe air pollution and smog emergency declared in Delhi.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 72.877655, "lat": 19.075983 },
+      "date": "2008-11-26",
+      "time": "20:00:00",
+      "description": "Coordinated terrorist attacks in Mumbai.",
+      "type": "terror"
+    },
+  
+    {
+      "place": { "lng": 91.7450, "lat": 26.1445 },
+      "date": "2024-06-19",
+      "time": "09:00:00",
+      "description": "Severe floods across Assam following prolonged rains; tens of thousands evacuated, multiple districts affected.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 76.1270, "lat": 11.6850 },
+      "date": "2024-07-30",
+      "time": "02:30:00",
+      "description": "Wayanad landslide (Kerala) — large slope failure after heavy monsoon rains; major loss of life and displacement reported.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 72.8311, "lat": 21.1702 },
+      "date": "2024-07-06",
+      "time": "14:30:00",
+      "description": "Six-storey residential building collapse in Surat after prolonged heavy rainfall; multiple casualties and rescue operations.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 72.9133, "lat": 19.0750 },
+      "date": "2024-05-13",
+      "time": "19:15:00",
+      "description": "Large advertising billboard collapse in Ghatkopar, Mumbai — several fatalities and many injured; civic negligence investigated.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 73.7793, "lat": 18.5204 },
+      "date": "2023-06-15",
+      "time": "10:30:00",
+      "description": "Severe urban flooding and waterlogging in Pune after heavy monsoon downpour, widespread transport disruption.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 88.3639, "lat": 22.5726 },
+      "date": "2020-05-20",
+      "time": "16:00:00",
+      "description": "Cyclone Amphan aftermath — storm surge and flooding in Kolkata and neighbouring districts (note: duplicate of earlier Amphan entry for completeness).",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 84.9066, "lat": 20.2961 },
+      "date": "2020-05-26",
+      "time": "06:00:00",
+      "description": "Cyclone Amphan related coastal flooding reported in parts of Odisha (tidal surge and local inundation).",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 77.1025, "lat": 28.7041 },
+      "date": "2020-03-25",
+      "time": "22:00:00",
+      "description": "Panic and mass movement at border checkpoints during early COVID-19 lockdown in Delhi-NCR causing large crowds and transit disruptions.",
+      "type": "crowd"
+    },
+    {
+      "place": { "lng": 76.2144, "lat": 9.9312 },
+      "date": "2018-08-08",
+      "time": "13:00:00",
+      "description": "Kerala floods (2018) — catastrophic flooding affecting multiple districts, major displacement and damage (historical reference).",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 88.3348, "lat": 22.9734 },
+      "date": "2019-11-21",
+      "time": "05:00:00",
+      "description": "Fire in a central Kolkata market complex causing multiple injuries and economic loss.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 75.8577, "lat": 22.7196 },
+      "date": "2021-10-08",
+      "time": "03:00:00",
+      "description": "Severe flooding in Madhya Pradesh after incessant rain causing roads to submerge and villages inundated.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 74.2179, "lat": 31.6340 },
+      "date": "2020-09-27",
+      "time": "02:00:00",
+      "description": "Flash floods in parts of Jammu & Kashmir during heavy rains; bridges damaged and local evacuations.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 76.2176, "lat": 28.4089 },
+      "date": "2020-07-17",
+      "time": "14:00:00",
+      "description": "Severe urban flooding and building collapses in parts of Agra during monsoon rains.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 79.0193, "lat": 21.1458 },
+      "date": "2020-10-04",
+      "time": "07:00:00",
+      "description": "Major fire at an industrial unit outside Nagpur causing large smoke plume and plant damage.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 76.6639, "lat": 11.2588 },
+      "date": "2019-12-18",
+      "time": "20:00:00",
+      "description": "Coastal storm surge and localized flooding in Kochi related to an intense offshore low-pressure system.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 73.5089, "lat": 22.3072 },
+      "date": "2024-07-24",
+      "time": "08:45:00",
+      "description": "Three-storey building collapse in Jam Khambhalia (Devbhumi Dwarka), Gujarat after heavy rains; multiple casualties reported.",
+      "type": "other"
+    },
+    {
+      "place": { "lng": 80.9462, "lat": 26.9124 },
+      "date": "2020-06-25",
+      "time": "11:00:00",
+      "description": "Heatwave-related medical emergency declared in Lucknow with increased heatstroke hospitalizations.",
+      "type": "natural_disaster"
+    },
+    {
+      "place": { "lng": 78.0322, "lat": 27.1767 },
+      "date": "2021-03-22",
+      "time": "09:30:00",
+      "description": "Large religious gathering leads to crowding and transport shutdowns near Agra — major crowd management challenge.",
+      "type": "crowd"
+    }
+  ]
+  
+  
+

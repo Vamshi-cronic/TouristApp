@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Danger Zone Manager</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <style>
+        #map { height: 100vh; width: 100%; }
+        #controls { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); background: white; padding: 10px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3); display: none; z-index: 1000; }
+        #radiusValue { font-weight: bold; }
+        button { margin-top: 5px; margin-right: 5px; padding: 5px 10px; border: none; border-radius: 6px; cursor: pointer; }
+        #saveBtn { background: green; color: white; }
+        #cancelBtn { background: red; color: white; }
+        .delete-btn { background: red; color: white; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; }
+        .save-disaster-btn { background: #ffc107; color: black; border: none; padding: 4px 8px; border-radius: 4px; cursor: pointer; font-size: 12px; margin-top: 5px; }
+        #heatmapToggle { position: absolute; top: 10px; right: 10px; z-index: 1000; padding: 10px; background: #fff; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="controls">
+        <label>Danger Zone Radius: <span id="radiusValue">500</span> m</label><br>
+        <input type="range" id="radiusRange" min="100" max="2000" value="500" step="50">
+        <br>
+        <label>Reason for Zone:</label><br>
+        <input type="text" id="zoneDescription" placeholder="E.g., 'Road closed due to landslide'" style="width: 95%; margin-bottom: 10px;">
+        <br>
+        <button id="saveBtn">Save Danger Zone</button>
+        <button id="cancelBtn">Cancel</button>
+    </div>
+    <button id="heatmapToggle">Toggle Heatmap</button>
+
+    <script>
+        var map = L.map('map').setView([22.9734, 78.6569], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19 }).addTo(map);
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                pos => map.setView([pos.coords.latitude, pos.coords.longitude], 14),
+                err => console.warn("Geolocation failed: " + err.message)
+            );
+        }
+
+        var tempMarker, tempCircle;
+        var heatLayer = null;
+        var heatmapVisible = false;
+        var policeLayer = L.layerGroup().addTo(map);
+        var disasterZoneLayer = L.layerGroup().addTo(map);
+
+        // --- Custom Icons ---
+        var policeIcon = L.icon({
+            iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        function drawZones(zones) {
+            zones.forEach(z => {
+                let color, weight = 1, fillColor = 'blue';
+                if (z.type === 'disaster') {
+                    color = 'black';
+                    fillColor = 'orange';
+                    weight = 2;
+                } else if (z.type === 'manual') {
+                    color = 'red';
+                    fillColor = 'red';
+                } else {
+                    color = 'blue';
+                }
+                const popupContent = z.description 
+                    ? `${z.description} (${z.radius}m)`
+                    : `Unnamed Zone (${z.radius}m)`;
+                
+                const popup = L.popup().setContent(popupContent + `<br><button class="delete-btn" onclick="deleteZone('${z.id}')">❌ Delete</button>`);
+
+                L.circle([z.lat, z.lng], { radius: z.radius, color: color, weight: weight, fillColor: fillColor, fillOpacity: 0.4 })
+                    .addTo(map)
+                    .bindPopup(popup);
+            });
+        }
+        
+        function drawPoliceMarkers(locations) {
+            policeLayer.clearLayers();
+            locations.forEach(loc => {
+                const popupContent = `<b>${loc.unit_name}</b><br>${loc.officer_name}<br><i>${loc.notes || 'No notes'}</i>`;
+                L.marker([loc.latitude, loc.longitude], {icon: policeIcon})
+                    .addTo(policeLayer)
+                    .bindPopup(popupContent);
+            });
+        }
+
+        function drawDisasterZones(zones, savedZones) {
+            disasterZoneLayer.clearLayers();
+            console.log(zones);
+            
+            zones.forEach(zone => {
+                const savedZone = savedZones.find(savedZone => savedZone.description.includes(zone.description));
+
+                const popupNode = document.createElement('div');
+                popupNode.innerHTML = `<b>Disaster Zone</b><br>Description: ${zone.description}<br>Probability: ${zone.prob.toFixed(2)}<br>Date: ${zone.date}<br>Time: ${zone.time}`;
+                
+                const actionBtn = document.createElement('button');
+                if (savedZone) {
+                    actionBtn.innerHTML = '❌ Delete';
+                    actionBtn.className = 'delete-btn';
+                    actionBtn.onclick = () => deleteZone(savedZone.id);
+                } else {
+                    actionBtn.innerHTML = 'Save as Danger Zone';
+                    actionBtn.className = 'save-disaster-btn';
+                    actionBtn.onclick = () => saveDisasterZone(zone.lat, zone.lng, 500, `Disaster Prediction: ${zone.description}`);
+                }
+                
+                popupNode.appendChild(document.createElement('br'));
+                popupNode.appendChild(actionBtn);
+
+                L.circle([zone.lat, zone.lng], { radius: 500, color: savedZone ? 'black' : 'orange', weight: savedZone ? 2 : 1, fillColor: 'orange', fillOpacity: 0.5 })
+                    .addTo(disasterZoneLayer)
+                    .bindPopup(popupNode);
+            });
+        }
+        
+        function fetchPoliceData() {
+            const bounds = map.getBounds();
+            const bbox = `${bounds.getWest()},${bounds.getSouth()},${bounds.getEast()},${bounds.getNorth()}`;
+            fetch(`/api/police_locations?bbox=${bbox}`)
+                .then(res => res.json())
+                .then(data => {
+                    if(data.status !== 'error') {
+                        drawPoliceMarkers(data);
+                    }
+                });
+        }
+
+        function fetchAndRenderData() {
+            Promise.all([
+                fetch("/get_zones").then(res => res.json()),
+                fetch("/api/disaster_zones").then(res => res.json())
+            ]).then(([savedZones, disasterZones]) => {
+                drawZones(savedZones);
+                drawDisasterZones(disasterZones, savedZones);
+            });
+        }
+
+        fetchAndRenderData();
+
+        map.on("click", e => {
+            if (tempMarker) {
+                map.removeLayer(tempMarker);
+                map.removeLayer(tempCircle);
+            }
+            tempMarker = L.marker(e.latlng).addTo(map).bindPopup("📍 New Zone Center").openPopup();
+            const radius = parseInt(document.getElementById("radiusRange").value);
+            tempCircle = L.circle(e.latlng, { radius, color: "red", fillOpacity: 0.4 }).addTo(map);
+            document.getElementById("controls").style.display = "block";
+        });
+
+        document.getElementById("radiusRange").addEventListener("input", e => {
+            const radius = parseInt(e.target.value);
+            document.getElementById("radiusValue").innerText = radius;
+            if (tempCircle) tempCircle.setRadius(radius);
+        });
+
+        function resetTempZone() {
+            if (tempMarker) map.removeLayer(tempMarker);
+            if (tempCircle) map.removeLayer(tempCircle);
+            tempMarker = tempCircle = null;
+            document.getElementById("controls").style.display = "none";
+            document.getElementById("zoneDescription").value = ''; // Clear input field
+        }
+
+        document.getElementById("saveBtn").addEventListener("click", () => {
+            const description = document.getElementById("zoneDescription").value;
+            if (!description) {
+                alert("Please enter a reason for creating the zone.");
+                return;
+            }
+            if (tempMarker && tempCircle) {
+                const { lat, lng } = tempCircle.getLatLng();
+                const radius = tempCircle.getRadius();
+                fetch("/add_zone", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ lat, lng, radius, description, type: 'manual' })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        alert("✅ Zone saved!");
+                        location.reload();
+                    } else {
+                        alert("❌ Failed to save zone: " + data.message);
+                        resetTempZone();
+                    }
+                });
+            }
+        });
+
+        document.getElementById("cancelBtn").addEventListener("click", resetTempZone);
+
+        window.deleteZone = function(zoneId) {
+            if (!confirm("Are you sure you want to delete this zone?")) return;
+            fetch(`/delete_zone/${zoneId}`, { method: "DELETE" })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.status === "success") {
+                        alert("🗑️ Zone deleted.");
+                        location.reload();
+                    } else {
+                        alert("❌ Error: " + data.message);
+                    }
+                });
+        }
+
+        window.saveDisasterZone = function(lat, lng, radius, description) {
+            if (!confirm(`Are you sure you want to save this disaster zone as a permanent danger zone?\n\nDescription: ${description}`)) return;
+            
+            fetch("/add_zone", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ lat, lng, radius, description, type: 'disaster' })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === "success") {
+                    alert("✅ Disaster Zone saved as permanent Danger Zone!");
+                    location.reload();
+                } else {
+                    alert("❌ Failed to save zone: " + data.message);
+                }
+            });
+        }
+
+        function updateHeatmap() {
+            fetch("/api/tourist_locations")
+                .then(res => {
+                    if (!res.ok) {
+                        throw new Error(`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then(locations => {
+                    const heatPoints = locations.map(loc => [loc.lat, loc.lng, 0.5]);
+                    if (!heatLayer) {
+                        heatLayer = L.heatLayer(heatPoints, { radius: 50, blur: 20, maxZoom: 18, gradient: { 0.2: 'blue', 0.35: 'lime', 1: 'red' } });
+                    } else {
+                        heatLayer.setLatLngs(heatPoints);
+                    }
+                })
+                .catch(error => {
+                    console.error("Heatmap update failed:", error);
+                });
+        }
+        
+        var baseLayers = {};
+        var overlayMaps = {
+            "Police Locations": policeLayer,
+            "Disaster Zones": disasterZoneLayer
+        };
+
+        L.control.layers(baseLayers, overlayMaps).addTo(map);
+
+        document.getElementById("heatmapToggle").addEventListener("click", () => {
+            heatmapVisible = !heatmapVisible;
+            if (heatmapVisible) {
+                if (!heatLayer) { // Create layer if it doesn't exist
+                    updateHeatmap();
+                } else {
+                    heatLayer.addTo(map);
+                }
+            } else {
+                if (heatLayer) {
+                    map.removeLayer(heatLayer);
+                }
+            }
+        });
+
+        map.on('moveend', fetchPoliceData); // Fetch police data when map view changes
+        // Initial fetch
+        map.whenReady(fetchPoliceData);
+
+
+        // Update heatmap every 10 seconds if visible
+        setInterval(() => {
+            if (heatmapVisible && heatLayer) {
+                updateHeatmap();
+            }
+        }, 10000);
+
+    </script>
+</body>
+</html>

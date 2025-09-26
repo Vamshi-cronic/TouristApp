@@ -1,0 +1,542 @@
+[
+  {
+    "zone_id": 1,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.564504,
+    "longitude": 93.213337,
+    "radius_m": 17514,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 2,
+    "zone_name": "Sundarbans Reserve Forest",
+    "zone_type": "Protected Zone",
+    "latitude": 21.923751,
+    "longitude": 89.193455,
+    "radius_m": 25436,
+    "notes": "Tiger reserve and mangrove ecosystem, highly protected."
+  },
+  {
+    "zone_id": 3,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.611415,
+    "longitude": 93.198363,
+    "radius_m": 16522,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 4,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.162122,
+    "longitude": 70.859313,
+    "radius_m": 14533,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 5,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.926296,
+    "longitude": 71.890575,
+    "radius_m": 10913,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 6,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.605281,
+    "longitude": 93.201363,
+    "radius_m": 16090,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 7,
+    "zone_name": "Siachen Glacier",
+    "zone_type": "Danger Zone",
+    "latitude": 35.380171,
+    "longitude": 77.094327,
+    "radius_m": 12921,
+    "notes": "High-altitude conflict-prone area, extreme weather hazards."
+  },
+  {
+    "zone_id": 8,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.162476,
+    "longitude": 70.824499,
+    "radius_m": 17534,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 9,
+    "zone_name": "Barren Island Volcano",
+    "zone_type": "Danger Zone",
+    "latitude": 12.313692,
+    "longitude": 93.849629,
+    "radius_m": 9054,
+    "notes": "Active volcanic island in Andaman Sea, navigation restricted."
+  },
+  {
+    "zone_id": 10,
+    "zone_name": "Bhabha Atomic Research Centre",
+    "zone_type": "Restricted Zone",
+    "latitude": 19.063371,
+    "longitude": 72.927854,
+    "radius_m": 4361,
+    "notes": "High-security government research facility, entry restricted."
+  },
+  {
+    "zone_id": 11,
+    "zone_name": "Bhabha Atomic Research Centre",
+    "zone_type": "Restricted Zone",
+    "latitude": 19.083469,
+    "longitude": 72.919525,
+    "radius_m": 4711,
+    "notes": "High-security government research facility, entry restricted."
+  },
+  {
+    "zone_id": 12,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.929509,
+    "longitude": 71.961358,
+    "radius_m": 11468,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 13,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.996697,
+    "longitude": 71.963315,
+    "radius_m": 14106,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 14,
+    "zone_name": "Siachen Glacier",
+    "zone_type": "Danger Zone",
+    "latitude": 35.377568,
+    "longitude": 77.102427,
+    "radius_m": 13136,
+    "notes": "High-altitude conflict-prone area, extreme weather hazards."
+  },
+  {
+    "zone_id": 15,
+    "zone_name": "Dr. A.P.J. Abdul Kalam Island",
+    "zone_type": "Restricted Zone",
+    "latitude": 20.709388,
+    "longitude": 87.047384,
+    "radius_m": 9585,
+    "notes": "Missile testing range, high-security restricted area."
+  },
+  {
+    "zone_id": 16,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.961872,
+    "longitude": 71.916736,
+    "radius_m": 11833,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 17,
+    "zone_name": "Barren Island Volcano",
+    "zone_type": "Danger Zone",
+    "latitude": 12.265983,
+    "longitude": 93.880065,
+    "radius_m": 11680,
+    "notes": "Active volcanic island in Andaman Sea, navigation restricted."
+  },
+  {
+    "zone_id": 18,
+    "zone_name": "Siachen Glacier",
+    "zone_type": "Danger Zone",
+    "latitude": 35.448611,
+    "longitude": 77.086701,
+    "radius_m": 12556,
+    "notes": "High-altitude conflict-prone area, extreme weather hazards."
+  },
+  {
+    "zone_id": 19,
+    "zone_name": "Siachen Glacier",
+    "zone_type": "Danger Zone",
+    "latitude": 35.386275,
+    "longitude": 77.101842,
+    "radius_m": 17432,
+    "notes": "High-altitude conflict-prone area, extreme weather hazards."
+  },
+  {
+    "zone_id": 20,
+    "zone_name": "Nanda Devi Biosphere Reserve",
+    "zone_type": "Protected Zone",
+    "latitude": 30.577765,
+    "longitude": 79.524024,
+    "radius_m": 31249,
+    "notes": "Fragile Himalayan ecosystem, UNESCO site."
+  },
+  {
+    "zone_id": 21,
+    "zone_name": "Nanda Devi Biosphere Reserve",
+    "zone_type": "Protected Zone",
+    "latitude": 30.553584,
+    "longitude": 79.538436,
+    "radius_m": 34311,
+    "notes": "Fragile Himalayan ecosystem, UNESCO site."
+  },
+  {
+    "zone_id": 22,
+    "zone_name": "Barren Island Volcano",
+    "zone_type": "Danger Zone",
+    "latitude": 12.275735,
+    "longitude": 93.81645,
+    "radius_m": 9638,
+    "notes": "Active volcanic island in Andaman Sea, navigation restricted."
+  },
+  {
+    "zone_id": 23,
+    "zone_name": "Bhabha Atomic Research Centre",
+    "zone_type": "Restricted Zone",
+    "latitude": 19.01762,
+    "longitude": 72.929242,
+    "radius_m": 4200,
+    "notes": "High-security government research facility, entry restricted."
+  },
+  {
+    "zone_id": 24,
+    "zone_name": "Bhabha Atomic Research Centre",
+    "zone_type": "Restricted Zone",
+    "latitude": 19.028602,
+    "longitude": 72.892368,
+    "radius_m": 5758,
+    "notes": "High-security government research facility, entry restricted."
+  },
+  {
+    "zone_id": 25,
+    "zone_name": "Nanda Devi Biosphere Reserve",
+    "zone_type": "Protected Zone",
+    "latitude": 30.569556,
+    "longitude": 79.570573,
+    "radius_m": 31250,
+    "notes": "Fragile Himalayan ecosystem, UNESCO site."
+  },
+  {
+    "zone_id": 26,
+    "zone_name": "Nanda Devi Biosphere Reserve",
+    "zone_type": "Protected Zone",
+    "latitude": 30.573771,
+    "longitude": 79.588062,
+    "radius_m": 33767,
+    "notes": "Fragile Himalayan ecosystem, UNESCO site."
+  },
+  {
+    "zone_id": 27,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.14596,
+    "longitude": 70.854475,
+    "radius_m": 16530,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 28,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.929997,
+    "longitude": 71.886923,
+    "radius_m": 13209,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 29,
+    "zone_name": "Siachen Glacier",
+    "zone_type": "Danger Zone",
+    "latitude": 35.40562,
+    "longitude": 77.141774,
+    "radius_m": 14024,
+    "notes": "High-altitude conflict-prone area, extreme weather hazards."
+  },
+  {
+    "zone_id": 30,
+    "zone_name": "Sundarbans Reserve Forest",
+    "zone_type": "Protected Zone",
+    "latitude": 21.924443,
+    "longitude": 89.175599,
+    "radius_m": 23717,
+    "notes": "Tiger reserve and mangrove ecosystem, highly protected."
+  },
+  {
+    "zone_id": 31,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.528445,
+    "longitude": 93.151507,
+    "radius_m": 22187,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 32,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.922606,
+    "longitude": 71.930656,
+    "radius_m": 13771,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 33,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.944234,
+    "longitude": 71.893137,
+    "radius_m": 11005,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 34,
+    "zone_name": "Bhabha Atomic Research Centre",
+    "zone_type": "Restricted Zone",
+    "latitude": 19.084635,
+    "longitude": 72.855421,
+    "radius_m": 5949,
+    "notes": "High-security government research facility, entry restricted."
+  },
+  {
+    "zone_id": 35,
+    "zone_name": "Chennai Airport Perimeter",
+    "zone_type": "Restricted Zone",
+    "latitude": 12.973442,
+    "longitude": 80.197706,
+    "radius_m": 6242,
+    "notes": "Airport security perimeter, drone flying prohibited."
+  },
+  {
+    "zone_id": 36,
+    "zone_name": "Nanda Devi Biosphere Reserve",
+    "zone_type": "Protected Zone",
+    "latitude": 30.49786,
+    "longitude": 79.582688,
+    "radius_m": 33150,
+    "notes": "Fragile Himalayan ecosystem, UNESCO site."
+  },
+  {
+    "zone_id": 37,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.598475,
+    "longitude": 93.198024,
+    "radius_m": 17124,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 38,
+    "zone_name": "Pokhran Test Range",
+    "zone_type": "Restricted Zone",
+    "latitude": 26.948605,
+    "longitude": 71.90367,
+    "radius_m": 11965,
+    "notes": "Nuclear test site, entry prohibited without clearance."
+  },
+  {
+    "zone_id": 39,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.087973,
+    "longitude": 70.809104,
+    "radius_m": 15442,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 40,
+    "zone_name": "Chennai Airport Perimeter",
+    "zone_type": "Restricted Zone",
+    "latitude": 12.996717,
+    "longitude": 80.159671,
+    "radius_m": 7900,
+    "notes": "Airport security perimeter, drone flying prohibited."
+  },
+  {
+    "zone_id": 41,
+    "zone_name": "Sundarbans Reserve Forest",
+    "zone_type": "Protected Zone",
+    "latitude": 21.930291,
+    "longitude": 89.181968,
+    "radius_m": 27198,
+    "notes": "Tiger reserve and mangrove ecosystem, highly protected."
+  },
+  {
+    "zone_id": 42,
+    "zone_name": "Siachen Glacier",
+    "zone_type": "Danger Zone",
+    "latitude": 35.427516,
+    "longitude": 77.152475,
+    "radius_m": 15070,
+    "notes": "High-altitude conflict-prone area, extreme weather hazards."
+  },
+  {
+    "zone_id": 43,
+    "zone_name": "Barren Island Volcano",
+    "zone_type": "Danger Zone",
+    "latitude": 12.288633,
+    "longitude": 93.837297,
+    "radius_m": 9700,
+    "notes": "Active volcanic island in Andaman Sea, navigation restricted."
+  },
+  {
+    "zone_id": 44,
+    "zone_name": "Chennai Airport Perimeter",
+    "zone_type": "Restricted Zone",
+    "latitude": 13.005002,
+    "longitude": 80.1701,
+    "radius_m": 7181,
+    "notes": "Airport security perimeter, drone flying prohibited."
+  },
+  {
+    "zone_id": 45,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.585388,
+    "longitude": 93.149768,
+    "radius_m": 21428,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 46,
+    "zone_name": "Sundarbans Reserve Forest",
+    "zone_type": "Protected Zone",
+    "latitude": 21.958692,
+    "longitude": 89.232142,
+    "radius_m": 23858,
+    "notes": "Tiger reserve and mangrove ecosystem, highly protected."
+  },
+  {
+    "zone_id": 47,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.171975,
+    "longitude": 70.822285,
+    "radius_m": 13947,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 48,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.565005,
+    "longitude": 93.145486,
+    "radius_m": 22086,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 49,
+    "zone_name": "Kaziranga National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 26.587321,
+    "longitude": 93.197725,
+    "radius_m": 18932,
+    "notes": "UNESCO World Heritage Site, wildlife protection laws enforced."
+  },
+  {
+    "zone_id": 50,
+    "zone_name": "Siachen Glacier",
+    "zone_type": "Danger Zone",
+    "latitude": 35.405422,
+    "longitude": 77.141495,
+    "radius_m": 17589,
+    "notes": "High-altitude conflict-prone area, extreme weather hazards."
+  },
+  {
+    "zone_id": 51,
+    "zone_name": "Dr. A.P.J. Abdul Kalam Island",
+    "zone_type": "Restricted Zone",
+    "latitude": 20.723466,
+    "longitude": 87.019358,
+    "radius_m": 9245,
+    "notes": "Missile testing range, high-security restricted area."
+  },
+  {
+    "zone_id": 52,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.109846,
+    "longitude": 70.797011,
+    "radius_m": 15361,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 53,
+    "zone_name": "Barren Island Volcano",
+    "zone_type": "Danger Zone",
+    "latitude": 12.316442,
+    "longitude": 93.841619,
+    "radius_m": 8572,
+    "notes": "Active volcanic island in Andaman Sea, navigation restricted."
+  },
+  {
+    "zone_id": 54,
+    "zone_name": "Barren Island Volcano",
+    "zone_type": "Danger Zone",
+    "latitude": 12.279065,
+    "longitude": 93.860501,
+    "radius_m": 8826,
+    "notes": "Active volcanic island in Andaman Sea, navigation restricted."
+  },
+  {
+    "zone_id": 55,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.076628,
+    "longitude": 70.828449,
+    "radius_m": 13158,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 56,
+    "zone_name": "Gir National Park",
+    "zone_type": "Protected Zone",
+    "latitude": 21.153456,
+    "longitude": 70.868214,
+    "radius_m": 17328,
+    "notes": "Habitat of Asiatic lions, strict conservation rules apply."
+  },
+  {
+    "zone_id": 57,
+    "zone_name": "Barren Island Volcano",
+    "zone_type": "Danger Zone",
+    "latitude": 12.292871,
+    "longitude": 93.851544,
+    "radius_m": 9628,
+    "notes": "Active volcanic island in Andaman Sea, navigation restricted."
+  },
+  {
+    "zone_id": 58,
+    "zone_name": "Chennai Airport Perimeter",
+    "zone_type": "Restricted Zone",
+    "latitude": 12.945911,
+    "longitude": 80.135241,
+    "radius_m": 5890,
+    "notes": "Airport security perimeter, drone flying prohibited."
+  },
+  {
+    "zone_id": 59,
+    "zone_name": "Dr. A.P.J. Abdul Kalam Island",
+    "zone_type": "Restricted Zone",
+    "latitude": 20.779273,
+    "longitude": 87.08466,
+    "radius_m": 9469,
+    "notes": "Missile testing range, high-security restricted area."
+  },
+  {
+    "zone_id": 60,
+    "zone_name": "Sundarbans Reserve Forest",
+    "zone_type": "Protected Zone",
+    "latitude": 21.937554,
+    "longitude": 89.198505,
+    "radius_m": 21627,
+    "notes": "Tiger reserve and mangrove ecosystem, highly protected."
+  }
+]

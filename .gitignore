@@ -1,1 +1,12 @@
+# Firebase
+firebase-service-account.json
+firebase-adminsdk.json
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment
 .venv
