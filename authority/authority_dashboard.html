@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | SafeTravel AI</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="dashboard-body">
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <svg class="logo-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2L4 5v6c0 5.55 3.84 10.74 8 12 4.16-1.26 8-6.45 8-12V5l-8-3z"></path></svg>
+            <span class="logo-text">SafeTravel AI</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#dashboard" class="nav-link active"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
+            <a href="#alerts" class="nav-link"><i class="fas fa-bell"></i><span>Alert Management</span><span class="notification-badge">3</span></a>
+            <a href="#tourists" class="nav-link"><i class="fas fa-users"></i><span>Tourist Database</span></a>
+            <a href="#geofence" class="nav-link"><i class="fas fa-map-marked-alt"></i><span>Geo-Fence Zones</span></a>
+            <a href="#reports" class="nav-link"><i class="fas fa-chart-line"></i><span>Reports & Analytics</span></a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="theme-toggle-container">
+                <span>Theme</span>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="user-profile">
+                <img src="https://i.pravatar.cc/40?u=officer" alt="User Avatar">
+                <div class="user-info">
+                    <h4>Officer Sharma</h4>
+                    <span>Police Department</span>
+                </div>
+            </div>
+            <a href="authority-login.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i><span>Logout</span></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <section id="dashboard" class="content-section active">
+             <div class="page-header">
+                <h1>Real-Time Overview</h1>
+                <div class="header-actions">
+                    <input type="search" placeholder="Search Tourist ID, Name...">
+                    <button class="btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <i class="fas fa-users-cog"></i>
+                    <div>
+                        <h2>12,450</h2>
+                        <p>Active Tourists</p>
+                    </div>
+                </div>
+                <div class="stat-card alert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <h2>3</h2>
+                        <p>Active Alerts</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-pin"></i>
+                    <div>
+                        <h2>85</h2>
+                        <p>High-Risk Zones</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-first-aid"></i>
+                    <div>
+                        <h2>127</h2>
+                        <p>Incidents Resolved (24h)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-main-grid">
+                <div class="map-container">
+                    <h3>Live Tourist Heatmap & Alert Locations</h3>
+                    <div id="dashboard-map"></div>
+                    <button id="fullscreen-btn" class="fullscreen-btn" aria-label="Toggle fullscreen map view">
+                        <i class="fas fa-expand"></i>
+                        <i class="fas fa-compress"></i>
+                    </button>
+                </div>
+                <div class="live-alerts-feed">
+                     <h3><i class="fas fa-wave-square"></i> Live Alert Feed</h3>
+                    <ul>
+                        <li class="alert-item high-priority">
+                            <div class="alert-icon"><i class="fas fa-exclamation-circle"></i></div>
+                            <div class="alert-details">
+                                <strong>PANIC BUTTON</strong> - Anjali Sharma<br>
+                                <small><i class="fas fa-map-marker-alt"></i> Near Tiger Hill, Darjeeling</small>
+                            </div>
+                            <span class="alert-time">2m ago</span>
+                        </li>
+                        <li class="alert-item medium-priority">
+                             <div class="alert-icon"><i class="fas fa-route"></i></div>
+                            <div class="alert-details">
+                                <strong>ROUTE DEVIATION</strong> - David Chen<br>
+                                <small><i class="fas fa-map-marker-alt"></i> Tsomgo Lake Route</small>
+                            </div>
+                            <span class="alert-time">15m ago</span>
+                        </li>
+                         <li class="alert-item low-priority">
+                             <div class="alert-icon"><i class="fas fa-draw-polygon"></i></div>
+                            <div class="alert-details">
+                                <strong>GEO-FENCE BREACH</strong> - Priya Patel<br>
+                                <small><i class="fas fa-map-marker-alt"></i> Restricted Forest Area</small>
+                            </div>
+                            <span class="alert-time">28m ago</span>
+                        </li>
+                        <li class="alert-item">
+                            <div class="alert-icon"><i class="fas fa-user-clock"></i></div>
+                           <div class="alert-details">
+                               <strong>PROLONGED INACTIVITY</strong> - John Smith<br>
+                               <small><i class="fas fa-map-marker-alt"></i> Hotel Nirvana, Gangtok</small>
+                           </div>
+                           <span class="alert-time">45m ago</span>
+                       </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="alerts" class="content-section">
+            <div class="page-header">
+                <h1>Alert Management</h1>
+                <button class="btn primary-btn"><i class="fas fa-plus"></i> Log Manual Incident</button>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Tourist Name</th>
+                            <th>Alert Type</th>
+                            <th>Location</th>
+                            <th>Timestamp</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="status-new">
+                            <td><span class="status-badge new">New</span></td>
+                            <td>Anjali Sharma</td>
+                            <td>Panic Button</td>
+                            <td>Tiger Hill, Darjeeling</td>
+                            <td>2025-09-26 12:53 PM</td>
+                            <td><button class="btn btn-sm">View Details</button></td>
+                        </tr>
+                        <tr class="status-progress">
+                            <td><span class="status-badge progress">In Progress</span></td>
+                            <td>David Chen</td>
+                            <td>Route Deviation</td>
+                            <td>Tsomgo Lake Route</td>
+                            <td>2025-09-26 12:40 PM</td>
+                            <td><button class="btn btn-sm">View Details</button></td>
+                        </tr>
+                         <tr class="status-resolved">
+                            <td><span class="status-badge resolved">Resolved</span></td>
+                            <td>Maria Garcia</td>
+                            <td>Location Drop-off</td>
+                            <td>MG Marg, Gangtok</td>
+                            <td>2025-09-26 11:15 AM</td>
+                            <td><button class="btn btn-sm">View Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="tourists" class="content-section">
+            <div class="page-header">
+                <h1>Tourist Database</h1>
+                <button class="btn primary-btn"><i class="fas fa-user-plus"></i> Register New Tourist</button>
+            </div>
+             <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Digital ID</th>
+                            <th>Name</th>
+                            <th>Nationality</th>
+                            <th>Safety Score</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>STAI-843921</td>
+                            <td>Anjali Sharma</td>
+                            <td>Indian</td>
+                            <td><span class="safety-score high">85/100</span></td>
+                            <td>Active Alert</td>
+                            <td><button class="btn btn-sm">View Profile</button></td>
+                        </tr>
+                        <tr>
+                            <td>STAI-991245</td>
+                            <td>John Smith</td>
+                            <td>American</td>
+                            <td><span class="safety-score medium">65/100</span></td>
+                            <td>Active</td>
+                            <td><button class="btn btn-sm">View Profile</button></td>
+                        </tr>
+                         <tr>
+                            <td>STAI-567890</td>
+                            <td>Priya Patel</td>
+                            <td>British</td>
+                            <td><span class="safety-score low">42/100</span></td>
+                            <td>Inactive</td>
+                            <td><button class="btn btn-sm">View Profile</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="geofence" class="content-section">
+            <div class="page-header">
+                <h1>Geo-Fence Management</h1>
+                <button class="btn primary-btn"><i class="fas fa-plus-circle"></i> Create New Zone</button>
+            </div>
+            <div class="geofence-container">
+                 <div class="map-container-large">
+                     <h3>Interactive Zone Map</h3>
+                     <div id="geofence-map"></div>
+                 </div>
+                 <div class="zone-list">
+                      <h3>Defined Zones (85)</h3>
+                      <ul>
+                          <li><strong>Restricted Forest Area</strong> <span class="zone-type restricted">Restricted</span></li>
+                          <li><strong>Tsomgo Lake Route</strong> <span class="zone-type high-risk">High-Risk</span></li>
+                          <li><strong>Nathula Pass Area</strong> <span class="zone-type high-risk">High-Risk</span></li>
+                          <li><strong>MG Marg Shopping Area</strong> <span class="zone-type safe-zone">Safe Zone</span></li>
+                      </ul>
+                 </div>
+            </div>
+        </section>
+
+        <section id="reports" class="content-section">
+            <div class="page-header">
+                <h1>Reports & Analytics</h1>
+                <button class="btn primary-btn"><i class="fas fa-download"></i> Export Report (PDF)</button>
+            </div>
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <h3>Incidents by Type (Last 30 Days)</h3>
+                    <canvas id="incidentTypeChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Tourist Arrivals by Nationality</h3>
+                    <canvas id="touristNationalityChart"></canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
